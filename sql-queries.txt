@@ -1,0 +1,22 @@
+USE Semester_Trips;
+
+/*Query to find the cheapest attractions*/
+
+SELECT MIN(entry_fee) AS cheapest_entry_fee
+FROM Attraction;
+
+/*Query to find the reviews that have 5 stars*/
+
+SELECT r.dest_id, COUNT(r.review_id) AS total_reviews
+FROM Reviews AS r
+WHERE r.rating = 5
+GROUP BY r.dest_id
+HAVING COUNT(r.review_id) > 0;
+
+/*Query to find a restaurant with a specific cuisine*/
+
+SELECT d.name AS destination_name, d.location, f.cuisine_type
+FROM Destination AS d INNER JOIN Food_place AS f ON d.dest_id = f.food_id
+WHERE f.cuisine_type = 'Turkish';
+
+/**/
