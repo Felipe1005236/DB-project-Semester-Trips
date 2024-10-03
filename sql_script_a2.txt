@@ -97,3 +97,12 @@ CREATE TABLE Street_food
  FOREIGN KEY(streetf_id) REFERENCES Food_place(food_id)
 );
 
+CREATE TABLE Reviews
+(
+  review_id INT PRIMARY KEY,
+  dest_id INT,
+  rating INT,
+  comment TEXT,
+  FOREIGN KEY(dest_id) REFERENCES Destination(dest_id)
+);
+

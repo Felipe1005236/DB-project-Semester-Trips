@@ -1,0 +1,4 @@
+For the third assignment we made some changes to the respective tables such as Reviews in order to formulate
+12 queries in regards to accessing, modifying and deleting fields and records in our database.
+We then used an AI tool to facilitate coming up with sample data to fill the database in order to show 
+that the queries and the database itself works properly.

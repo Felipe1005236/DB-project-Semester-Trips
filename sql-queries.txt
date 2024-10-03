@@ -1,37 +1,61 @@
-USE Semester_Trips;
+/* Query to find the cheapest attraction and its location */
 
-/*Query to find the cheapest attractions*/
-
-SELECT MIN(entry_fee) AS cheapest_entry_fee
-FROM Attraction;
-
-/*Query to find the reviews that have 5 stars*/
-
-SELECT r.dest_id, COUNT(r.review_id) AS total_reviews
-FROM Reviews AS r
-WHERE r.rating = 5
-GROUP BY r.dest_id
-HAVING COUNT(r.review_id) > 0;
-
-/*Query to find a restaurant with a specific cuisine*/
-
-SELECT d.name AS destination_name, d.location, f.cuisine_type
-FROM Destination AS d INNER JOIN Food_place AS f ON d.dest_id = f.food_id
-WHERE f.cuisine_type = 'Turkish';
-
-/**/
-
-/* Query to find the average entry fee for all the destinations */
-
-SELECT AVG(entry_fee) AS average_entry_fee
-FROM Attraction;
+SELECT d.name AS attraction_name, d.location, MIN(a.entry_fee) AS cheapest_entry_fee
+FROM Destination AS d
+INNER JOIN Attraction AS a ON d.dest_id = a.attraction_id;
 
 
-/* Query to find all the destinations that are open after 6pm */
+/* Query to find all destinations and their corresponding entry fees for attractions */
 
-SELECT name, location, closing_time
-FROM Destination
-WHERE closing_time > '18:00:00';
+SELECT d.name AS destination_name, d.location, a.entry_fee
+FROM Destination AS d
+INNER JOIN Attraction AS a ON d.dest_id = a.attraction_id
+ORDER BY d.name;
+
+
+
+/* Query to find the most popular cuisine type in the database */
+
+SELECT f.cuisine_type, COUNT(f.food_id) AS total_food_places
+FROM Food_place AS f
+GROUP BY f.cuisine_type
+ORDER BY COUNT(f.food_id) DESC
+LIMIT 1;
+
+
+
+/* Query to find restaurants and their total number of food places by type */
+
+SELECT f.cuisine_type, COUNT(f.food_id) AS total_food_places
+FROM Food_place AS f
+INNER JOIN Restaurant AS r ON f.food_id = r.restaurant_id
+GROUP BY f.cuisine_type
+HAVING COUNT(f.food_id) > 1;
+
+
+/* Query to find the most visited destination with free activities */
+
+SELECT d.name AS destination_name, d.location, COUNT(r.review_id) AS total_reviews
+FROM Destination AS d
+INNER JOIN Activity AS a ON d.dest_id = a.activity_id
+INNER JOIN Reviews AS r ON d.dest_id = r.dest_id
+WHERE a.entry_fee = 0
+GROUP BY d.name, d.location
+HAVING COUNT(r.review_id) = (SELECT MAX(COUNT(review_id)) FROM Reviews GROUP BY dest_id);
+
+
+/* Query to find the average opening and closing times for all destinations */
+
+SELECT AVG(TIME_TO_SEC(opening_time)) AS average_opening_time, AVG(TIME_TO_SEC(closing_time)) AS average_closing_time
+FROM Destination;
+
+
+/* Query to find all destinations that are open after 6pm and have activities costing less than 10 */
+
+SELECT d.name AS destination_name, d.location, a.entry_fee, d.closing_time
+FROM Destination AS d
+INNER JOIN Activity AS a ON d.dest_id = a.activity_id
+WHERE d.closing_time > '18:00:00' AND a.entry_fee < 10;
 
 
 /* Query to find all students with their corresponding user information */
@@ -40,33 +64,34 @@ SELECT s.username AS student_username, u.name AS user_name, u.email
 FROM Student AS s
 JOIN User AS u ON s.student_id = u.user_id;
 
-/* Query for all destinations located in Hamburg */
 
-SELECT name, location
+/* Query to find destinations located in Bremen and opening before 10:00 */
+
+SELECT name, opening_time
 FROM Destination
-WHERE location = 'Hamburg';
+WHERE opening_time < '10:00:00' AND location = 'Bremen';
 
-/* Query for all food places with Korean cuisine */
 
-SELECT cuisine_type
-FROM Food_place
-WHERE cuisine_type = 'Korean';
+/* Query to find food places with Turkish cuisine */
 
-/* Query to find destinations wiht free activities */
-
-SELECT d.name AS destination_name, d.location, a.entry_fee
+SELECT d.name AS destination_name, d.location, f.cuisine_type
 FROM Destination AS d
-INNER JOIN Activity AS a ON d.dest_id = a.activity_id
-WHERE a.entry_fee = 0;
+INNER JOIN Food_place AS f ON d.dest_id = f.food_id
+WHERE f.cuisine_type = 'Turkish';
 
-SELECT username, school
-FROM Student
-WHERE username LIKE 'A%';
 
-SELECT u.name, u.email, s.username, s.school
-FROM Student AS s
-INNER JOIN User AS u ON s.student_id = u.user_id;
+/* Query to find the average entry fee for all attractions */
 
-SELECT name, opening_time 
-FROM Destination
-WHERE opening_time < '10:00:00' AND location = ‘Bremen’;
+SELECT AVG(entry_fee) AS average_entry_fee
+FROM Attraction;
+
+
+/* Query to find destinations with 5-star reviews and specific cuisines */
+
+SELECT d.name AS destination_name, f.cuisine_type, COUNT(r.review_id) AS total_5_star_reviews
+FROM Destination AS d
+INNER JOIN Reviews AS r ON d.dest_id = r.dest_id
+INNER JOIN Food_place AS f ON d.dest_id = f.food_id
+WHERE r.rating = 5
+GROUP BY d.name, f.cuisine_type
+HAVING COUNT(r.review_id) > 1;
