@@ -20,3 +20,22 @@ FROM Destination AS d INNER JOIN Food_place AS f ON d.dest_id = f.food_id
 WHERE f.cuisine_type = 'Turkish';
 
 /**/
+
+/* Query to find the average entry fee for all the destinations */
+
+SELECT AVG(entry_fee) AS average_entry_fee
+FROM Attraction;
+
+
+/* Query to find all the destinations that are open after 6pm */
+
+SELECT name, location, closing_time
+FROM Destination
+WHERE closing_time > '18:00:00';
+
+
+/* Query to find all students with their corresponding user information */
+
+SELECT s.username AS student_username, u.name AS user_name, u.email
+FROM Student AS s
+JOIN User AS u ON s.student_id = u.user_id;
