@@ -58,3 +58,15 @@ SELECT d.name AS destination_name, d.location, a.entry_fee
 FROM Destination AS d
 INNER JOIN Activity AS a ON d.dest_id = a.activity_id
 WHERE a.entry_fee = 0;
+
+SELECT username, school
+FROM Student
+WHERE username LIKE 'A%';
+
+SELECT u.name, u.email, s.username, s.school
+FROM Student AS s
+INNER JOIN User AS u ON s.student_id = u.user_id;
+
+SELECT name, opening_time 
+FROM Destination
+WHERE opening_time < '10:00:00' AND location = ‘Bremen’;
