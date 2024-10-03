@@ -39,3 +39,22 @@ WHERE closing_time > '18:00:00';
 SELECT s.username AS student_username, u.name AS user_name, u.email
 FROM Student AS s
 JOIN User AS u ON s.student_id = u.user_id;
+
+/* Query for all destinations located in Hamburg */
+
+SELECT name, location
+FROM Destination
+WHERE location = 'Hamburg';
+
+/* Query for all food places with Korean cuisine */
+
+SELECT cuisine_type
+FROM Food_place
+WHERE cuisine_type = 'Korean';
+
+/* Query to find destinations wiht free activities */
+
+SELECT d.name AS destination_name, d.location, a.entry_fee
+FROM Destination AS d
+INNER JOIN Activity AS a ON d.dest_id = a.activity_id
+WHERE a.entry_fee = 0;
