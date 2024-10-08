@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Website</title>
+</head>
+<body>
+    <div id="titlecard">
+        <h1>Hello World!</h1>
+        <p>I am <b>Felipe</b></p>
+    </div>
+
+    <div class="article">
+        <h2>Article 1</h2>
+        <p>Hello my name is Bisera I am learning HTML.</p>
+        <h3>Bisera Info</h3>
+        <p>I just turned 20 lol</p>
+    </div>
+
+    <div class="article">
+        <h2>Article 2</h2>
+        <p>Hello my name is Madina I am also learning HTML.</p>    
+    </div>
+</body>
+</html>
