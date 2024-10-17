@@ -23,12 +23,12 @@
         <form>
             <div class="aligning_questions">
                 <label class="question"> Editor ID: </label>
-                <select id="e_id" name="e_id"></select>
+                <input type="text" id="e_id" name="e_id">
             </div>
             <br>
             <div class="aligning_questions">
                 <label class="question"> Destination ID:</label>
-                <select id="d_id" name="e_destination"></select>
+                <input type="text" id="d_id" name="e_destination">
             </div>
             <br>
             <div class="aligning_questions">

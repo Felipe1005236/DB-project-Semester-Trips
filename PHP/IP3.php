@@ -23,17 +23,17 @@
         <form>
             <div class="aligning_questions">
                 <label class="question"> Name of destination: </label>
-                <select id="name" name="s_destination"></select>
+                <input type="text" id="name" name="s_destination">
             </div>
             <br>
             <div class="aligning_questions">
                 <label class="question"> Location:</label>
-                <select id="location" name="s_location"></select>
+                <input type="text" id="location" name="s_location">
             </div>
             <br>
             <div class="aligning_questions">
                 <label class="question"> Opening times:</label>
-                <select id="op_times" name="opening_time"></select>
+                <input type="text" id="op_times" name="opening_time">
 
                 <label class="question"> stars </label>
                 <br>
