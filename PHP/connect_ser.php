@@ -8,7 +8,7 @@
 <body>
     <h1>Hello</h1>
     <?php
-        $connection = new mysqli("5.75.182.017", "rfelipe", "Diez.cinco5", "rfelipe_db");
+        $connection = new mysqli("5.75.182.017", "rfelipe@", "Diez.cinco5", "rfelipe_db");
 
         if($connection->connect_errno){
             echo "Failed to connect to db " . $mysqli->connect_error;
