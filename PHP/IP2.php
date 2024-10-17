@@ -19,7 +19,7 @@
 
     <div class="center">
         <h3> Editor moderates reviews </h3>
-
+        <form action="connect_ser.php" method="post">
         <form>
             <div class="aligning_questions">
                 <label class="question"> Editor ID: </label>

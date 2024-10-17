@@ -16,7 +16,7 @@
 <body>
 
     <h1> Input Page 1</h1>
-
+    <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Student posting reviews </h3>
 
@@ -49,9 +49,6 @@
             </div>
         </form>
     </div>
-    <?php
-        echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
-    ?>
 
 </body>
 </html>

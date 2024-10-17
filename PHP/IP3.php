@@ -16,24 +16,24 @@
 <body>
 
     <h1> Input Page 2</h1>
-
+    <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Student visits destination </h3>
 
         <form>
             <div class="aligning_questions">
                 <label class="question"> Name of destination: </label>
-                <input type="text">
+                <input type="text" name="s_dest">
             </div>
             <br>
             <div class="aligning_questions">
                 <label class="question"> Location:</label>
-                <input type="text">
+                <input type="text" name="s_location>
             </div>
             <br>
             <div class="aligning_questions">
                 <label class="question"> Opening times:</label>
-                <input type="time">
+                <input type="time" name="s_opening">
 
                 <label class="question"> stars </label>
                 <br>
