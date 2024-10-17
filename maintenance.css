@@ -1,0 +1,63 @@
+body{
+    background-color: #FDF4F5;
+    color: #001F3F;
+}
+#h1{
+    color: black;
+}
+
+.header {
+    text-align: center;
+    text-shadow: 0px 0px 5px white;
+    background-image: url("images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #001F3F;
+    padding: 1px;
+    font-family: "Neue Helvatica", "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+}
+
+.header h1{
+    font-size: 100px;
+}
+.header p{
+    font-size: 30px;
+}
+
+.navigation{
+    background-color: #244941;
+    overflow: hidden;
+    height: 50px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.navigation a{
+    float: right;
+    color: #a2d180;
+    display: block;
+    text-align: center;
+    padding: 10px 40px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform .2s;
+}
+
+.navigation a:hover{
+    background-color: #a2d180;
+    color: #244941;
+    height: 50px;
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+.layout{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #C9DABF;
+    padding: 70px;
+    font-size: 30px;
+}

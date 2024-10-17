@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+  }
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-image: url(images/ip_bkg-transformed.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 40px;
+}
+
+h3, p{
+    color: #0f1e25;
+    opacity: 100%;
+}
+
+h2{
+    color: #d2e7ab;
+}
+
+.center{
+    height: 300px;
+    width: 800px;
+    border-color: #02272f;
+    border-style: solid; 
+    position: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    background-color: #31664a;
+    border-radius: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 85%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+h3{
+    align-self: flex-start;
+    margin: auto;
+    margin-top: 10%;
+    font-size: 30px;
+}
+
+p{
+    margin: auto;
+    margin-bottom: 10%;
+}
