@@ -23,17 +23,17 @@
         <form>
             <div class="aligning_questions">
                 <label class="question"> Student ID: </label>
-                <select id="s_id"></select>
+                <select id="s_id" name="s_id"></select>
             </div>
             <br>
             <div class="aligning_questions">
                 <label class="question"> Destination ID:</label>
-                <select id="d_id"></select>
+                <select id="d_id" name="s_destination"></select>
             </div>
             <br>
             <div class="aligning_questions">
                 <label class="question"> Enter rating:</label>
-                <select id="rating">
+                <select id="rating" name="s_rating">
                 <option value="5">⭐⭐⭐⭐⭐</option>
                 <option value="4">⭐⭐⭐⭐</option>
                 <option value="3">⭐⭐⭐</option>
