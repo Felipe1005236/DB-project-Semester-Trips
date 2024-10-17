@@ -15,25 +15,25 @@
 
 <body>
 
-    <h1> Input Page 2</h1>
+    <h1> Input Page 4</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Editor edits destination </h3>
+        <h3> User Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name of destination: </label>
-                <input type="text" name="e_destination">
+                <label class="question"> Name of user: </label>
+                <input type="text" name="user_name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Location:</label>
-                <input type="text" id="location" name="e_location">
+                <label class="question"> Email:</label>
+                <input type="email" id="email" name="user_email">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Opening times:</label>
-                <input type="time" name="e_time">
+                <label class="question"> User ID:</label>
+                <input type="text" name="user_id">
 
                 <label class="question"> stars </label>
                 <br>

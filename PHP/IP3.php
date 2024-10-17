@@ -15,10 +15,10 @@
 
 <body>
 
-    <h1> Input Page 2</h1>
+    <h1> Input Page 3</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Student visits destination </h3>
+        <h3> Destination Form </h3>
 
         <form>
             <div class="aligning_questions">

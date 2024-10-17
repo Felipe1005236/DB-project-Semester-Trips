@@ -18,32 +18,19 @@
     <h1> Input Page 2</h1>
 
     <div class="center">
-        <h3> Editor moderates reviews </h3>
+        <h3> Student Form </h3>
         <form action="connect_ser.php" method="post">
         <form>
             <div class="aligning_questions">
-                <label class="question"> Editor ID: </label>
-                <input type="text" id="e_id" name="e_id">
+                <label class="question"> Name: </label>
+                <input type="text" id="name" name="name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Destination ID:</label>
-                <input type="text" id="d_id" name="e_destination">
+                <label class="question"> Age:</label>
+                <input type="number" id="age" name="age">
             </div>
-            <br>
-            <div class="aligning_questions">
-                <label class="question"> Enter rating:</label>
-                <select id="rating" name="e_rating">
-                <option value="5">⭐⭐⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="1">⭐</option>
-                </select>
-
-                <label class="question"> stars </label>
-                <br>
-            </div>
+            
             <div class="button-container">
                 <button type="submit">Submit</button>
             </div>

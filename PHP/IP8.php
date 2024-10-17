@@ -15,33 +15,25 @@
 
 <body>
 
-    <h1> Input Page 1</h1>
+    <h1> Input Page 8</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Review Form </h3>
+        <h3> Activities Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Student ID: </label>
-                <input type="text" id="s_id" name="s_id">
+                <label class="question"> Name of activity: </label>
+                <input type="text" name="act_name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Destination ID:</label>
-                <input type="text" id="d_id" name="s_destination">
+                <label class="question"> Entrance fee:</label>
+                <input type="number" id="fee" name="fee">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Enter rating:</label>
-                <select id="rating" name="s_rating">
-                <option value="5">⭐⭐⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="1">⭐</option>
-                </select>
-
-                <label class="question"> stars </label>
+                <label class="question"> Activity ID:</label>
+                <input type="text" name="att_id">
                 <br>
             </div>
             <div class="button-container">
@@ -49,6 +41,10 @@
             </div>
         </form>
     </div>
+    
+    <?php
+        echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
+    ?>
 
 </body>
 </html>

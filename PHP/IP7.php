@@ -15,33 +15,31 @@
 
 <body>
 
-    <h1> Input Page 1</h1>
+    <h1> Input Page 7</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Review Form </h3>
+        <h3> Food Place Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Student ID: </label>
-                <input type="text" id="s_id" name="s_id">
+                <label class="question"> Name of Food Place: </label>
+                <input type="text" name="food_name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Destination ID:</label>
-                <input type="text" id="d_id" name="s_destination">
+                <label class="question"> Food Place ID:</label>
+                <input type="text" id="food_id" name="food_id">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Enter rating:</label>
-                <select id="rating" name="s_rating">
-                <option value="5">⭐⭐⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="1">⭐</option>
+                <label class="question"> Type of cuisine:</label>
+                    <select id="cuisine" name="cuisine">
+                    <option value="chinese">chinese</option>
+                    <option value="german">German</option>
+                    <option value="indian">Indian</option>
+                    <option value="turkish">Turkish</option>
+                    <option value="mediterranian">Mediterranian</option>
                 </select>
-
-                <label class="question"> stars </label>
                 <br>
             </div>
             <div class="button-container">
@@ -49,6 +47,10 @@
             </div>
         </form>
     </div>
+    
+    <?php
+        echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
+    ?>
 
 </body>
 </html>
