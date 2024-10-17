@@ -106,3 +106,38 @@ CREATE TABLE Reviews
   FOREIGN KEY(dest_id) REFERENCES Destination(dest_id)
 );
 
+CREATE TABLE Student_Reviews
+(
+  student_id INT,
+  review_id INT,
+  FOREIGN KEY(student_id) REFERENCES Student(student_id),
+  FOREIGN KEY(review_id) REFERENCES Reviews(review_id),
+  PRIMARY KEY(student_id, review_id)
+);
+
+CREATE TABLE Editor_Reviews
+(
+  editor_id INT,
+  review_id INT,
+  FOREIGN KEY(editor_id) REFERENCES Editor(editor_id),
+  FOREIGN KEY(review_id) REFERENCES Reviews(review_id),
+  PRIMARY KEY(editor_id, review_id)
+);
+
+CREATE TABLE Student_Destination
+(
+  student_id INT,
+  dest_id INT,
+  FOREIGN KEY(student_id) REFERENCES Student(student_id),
+  FOREIGN KEY(dest_id) REFERENCES Destination(dest_id),
+  PRIMARY KEY(student_id, dest_id)
+);
+
+CREATE TABLE Editor_Destination
+(
+  editor_id INT,
+  dest_id INT,
+  FOREIGN KEY(editor_id) REFERENCES Editor(editor_id),
+  FOREIGN KEY(dest_id) REFERENCES Destination(dest_id),
+  PRIMARY KEY(editor_id, dest_id)
+);
