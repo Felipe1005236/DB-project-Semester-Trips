@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Railway Getaway</title>
-</head>
-<body>
-    <h1>Hello</h1>
-    <?php
-        $connection = new mysqli("5.75.182.017", "rfelipe@", "Diez.cinco5", "rfelipe_db");
+<?php
 
-        if($connection->connect_errno){
-            echo "Failed to connect to db " . $mysqli->connect_error;
-            exit();
-        }
-        
-        $student_id = $_REQUEST['s_id'];
-        $student_destination = $_REQUEST['s_destination'];
-        $student_rating = $_REQUEST['s_rating'];
-        $e_id = $_REQUEST['e_id'];
-        $e_destination = $_REQUEST['e_destination'];
-        $e_rating = $_REQUEST['e_rating'];
-        $s_destination = $_REQUEST['s_destination'];
-        $s_location = $_REQUEST['s_location'];
-        $s_opening_time = $_REQUEST['opening_time'];
-        $e_destination = $_REQUEST['e_destination'];
-        $e_location = $_REQUEST['e_location'];
-        $e_time = $_REQUEST['e_time'];
-        
-    ?>
+$servername = "5.75.182.107";
+$username = "rfelipe";
+$password = "Diez.cinco5";
+$dbname = "rfelipe_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $student_id = $_POST['s_id'];
+    $student_destination = $_POST['s_destination'];
+    $student_rating = $_POST['s_rating'];
+
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare("INSERT INTO Reviews (d_id, rating, s_id) VALUES (?, ?, ?)");
+    $stmt->bind_param("isi", $student_destination, $student_rating, $student_id);
+
+    if ($stmt->execute()) {
+        echo "Review added successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
+?>
