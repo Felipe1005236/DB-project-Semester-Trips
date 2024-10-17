@@ -15,25 +15,31 @@
 
 <body>
 
-    <h1> Input Page 2</h1>
-    <form action="connect_ser.php" method="post">
+    <h1> Input Page 1</h1>
+
     <div class="center">
-        <h3> Editor edits destination </h3>
+        <h3> Student posting reviews </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name of destination: </label>
-                <select id="name_d"></select>
+                <label class="question"> Student ID: </label>
+                <select id="s_id" name="s_id"></select>
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Location:</label>
-                <select id="location"></select>
+                <label class="question"> Destination ID:</label>
+                <select id="d_id" name="destination"></select>
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Opening times:</label>
-                <input type="time" name="e_time">
+                <label class="question"> Enter rating:</label>
+                <select id="rating" name="s_rating">
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+                </select>
 
                 <label class="question"> stars </label>
                 <br>
@@ -43,7 +49,6 @@
             </div>
         </form>
     </div>
-    
     <?php
         echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
     ?>
