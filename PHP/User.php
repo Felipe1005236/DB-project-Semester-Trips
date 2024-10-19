@@ -15,7 +15,7 @@
 
 <body>
 
-    <h1> Input Page 4</h1>
+    <h1> User Page</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> User Form </h3>

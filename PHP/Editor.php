@@ -15,33 +15,34 @@
 
 <body>
 
-    <h1> Input Page 7</h1>
+    <h1> Edito Page</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Food Place Form </h3>
+        <h3> Editor Form </h3>
 
         <form>
+        <div class="aligning_questions">
+                <label class="question"> Editor name: </label>
+                <input type="text" id="editor_name" name="editor_name">
+            </div>
             <div class="aligning_questions">
-                <label class="question"> Name of Food Place: </label>
-                <input type="text" name="food_name">
+                <label class="question"> Editor ID: </label>
+                <input type="text" id="editor_id" name="editor_id">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Food Place ID:</label>
-                <input type="text" id="food_id" name="food_id">
-            </div>
-            <br>
-            <div class="aligning_questions">
-                <label class="question"> Type of cuisine:</label>
-                    <select id="cuisine" name="cuisine">
-                    <option value="chinese">chinese</option>
-                    <option value="german">German</option>
-                    <option value="indian">Indian</option>
-                    <option value="turkish">Turkish</option>
-                    <option value="mediterranian">Mediterranian</option>
+                <label class="question"> Type of editor:</label>
+                    <select id="type" name="type">
+                    <option value="writer">Text writer</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                    <option value="photo">Photo editor</option>
+                    <option value="review">Reviewer</option>
                 </select>
                 <br>
             </div>
+           
+            <br>
             <div class="button-container">
                 <button type="submit">Submit</button>
             </div>

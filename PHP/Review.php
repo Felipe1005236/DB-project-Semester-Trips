@@ -15,25 +15,31 @@
 
 <body>
 
-    <h1> Input Page 3</h1>
+    <h1> Review Page</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Destination Form </h3>
+        <h3> Review Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name of destination: </label>
-                <input type="text" id="name" name="s_destination">
+                <label class="question"> Student ID: </label>
+                <input type="text" id="s_id" name="s_id">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Location:</label>
-                <input type="text" id="location" name="s_location">
+                <label class="question"> Destination ID:</label>
+                <input type="text" id="d_id" name="s_destination">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Opening times:</label>
-                <input type="text" id="op_times" name="opening_time">
+                <label class="question"> Enter rating:</label>
+                <select id="rating" name="s_rating">
+                <option value="5">⭐⭐⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="1">⭐</option>
+                </select>
 
                 <label class="question"> stars </label>
                 <br>
@@ -43,10 +49,6 @@
             </div>
         </form>
     </div>
-    
-    <?php
-        echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
-    ?>
 
 </body>
 </html>

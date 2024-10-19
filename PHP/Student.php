@@ -15,7 +15,7 @@
 
 <body>
 
-    <h1> Input Page 2</h1>
+    <h1> Student Page</h1>
 
     <div class="center">
         <h3> Student Form </h3>

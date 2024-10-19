@@ -15,25 +15,27 @@
 
 <body>
 
-    <h1> Input Page 8</h1>
+    <h1> Destinations Page </h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Activities Form </h3>
+        <h3> Destination Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name of activity: </label>
-                <input type="text" name="act_name">
+                <label class="question"> Name of destination: </label>
+                <input type="text" id="name" name="s_destination">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Entrance fee:</label>
-                <input type="number" id="fee" name="fee">
+                <label class="question"> Location:</label>
+                <input type="text" id="location" name="s_location">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Activity ID:</label>
-                <input type="text" name="att_id">
+                <label class="question"> Opening times:</label>
+                <input type="text" id="op_times" name="opening_time">
+
+                <label class="question"> stars </label>
                 <br>
             </div>
             <div class="button-container">

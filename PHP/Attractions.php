@@ -15,7 +15,7 @@
 
 <body>
 
-    <h1> Input Page 6</h1>
+    <h1> Attractions Page</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Attraction Form </h3>
