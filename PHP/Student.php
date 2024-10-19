@@ -15,36 +15,27 @@
 
 <body>
 
-    <h1> Input Page 6</h1>
-    <form action="connect_ser.php" method="post">
-    <div class="center">
-        <h3> Attraction Form </h3>
+    <h1> Student Page</h1>
 
+    <div class="center">
+        <h3> Student Form </h3>
+        <form action="connect_ser.php" method="post">
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name of attraction: </label>
-                <input type="text" name="att_name">
+                <label class="question"> Name: </label>
+                <input type="text" id="name" name="name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Entrance fee:</label>
-                <input type="number" id="fee" name="fee">
+                <label class="question"> Age:</label>
+                <input type="number" id="age" name="age">
             </div>
-            <br>
-            <div class="aligning_questions">
-                <label class="question"> Attraction ID:</label>
-                <input type="text" name="att_id">
-                <br>
-            </div>
+            
             <div class="button-container">
                 <button type="submit">Submit</button>
             </div>
         </form>
     </div>
-    
-    <?php
-        echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
-    ?>
 
 </body>
 </html>

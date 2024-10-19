@@ -15,7 +15,7 @@
 
 <body>
 
-    <h1> Input Page 3</h1>
+    <h1> Destinations Page </h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Destination Form </h3>

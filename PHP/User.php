@@ -15,31 +15,27 @@
 
 <body>
 
-    <h1> Input Page 7</h1>
+    <h1> User Page</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Food Place Form </h3>
+        <h3> User Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name of Food Place: </label>
-                <input type="text" name="food_name">
+                <label class="question"> Name of user: </label>
+                <input type="text" name="user_name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Food Place ID:</label>
-                <input type="text" id="food_id" name="food_id">
+                <label class="question"> Email:</label>
+                <input type="email" id="email" name="user_email">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Type of cuisine:</label>
-                    <select id="cuisine" name="cuisine">
-                    <option value="chinese">chinese</option>
-                    <option value="german">German</option>
-                    <option value="indian">Indian</option>
-                    <option value="turkish">Turkish</option>
-                    <option value="mediterranian">Mediterranian</option>
-                </select>
+                <label class="question"> User ID:</label>
+                <input type="text" name="user_id">
+
+                <label class="question"> stars </label>
                 <br>
             </div>
             <div class="button-container">

@@ -15,22 +15,27 @@
 
 <body>
 
-    <h1> Input Page 2</h1>
-
+    <h1> Activities Page </h1>
+    <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Student Form </h3>
-        <form action="connect_ser.php" method="post">
+        <h3> Activities Form </h3>
+
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name: </label>
-                <input type="text" id="name" name="name">
+                <label class="question"> Name of activity: </label>
+                <input type="text" name="act_name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Age:</label>
-                <input type="number" id="age" name="age">
+                <label class="question"> Entrance fee:</label>
+                <input type="number" id="fee" name="fee">
             </div>
-            
+            <br>
+            <div class="aligning_questions">
+                <label class="question"> Activity ID:</label>
+                <input type="text" name="att_id">
+                <br>
+            </div>
             <div class="button-container">
                 <button type="submit">Submit</button>
             </div>

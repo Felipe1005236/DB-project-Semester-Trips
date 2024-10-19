@@ -15,27 +15,25 @@
 
 <body>
 
-    <h1> Input Page 4</h1>
+    <h1> Attractions Page</h1>
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> User Form </h3>
+        <h3> Attraction Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Name of user: </label>
-                <input type="text" name="user_name">
+                <label class="question"> Name of attraction: </label>
+                <input type="text" name="att_name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Email:</label>
-                <input type="email" id="email" name="user_email">
+                <label class="question"> Entrance fee:</label>
+                <input type="number" id="fee" name="fee">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> User ID:</label>
-                <input type="text" name="user_id">
-
-                <label class="question"> stars </label>
+                <label class="question"> Attraction ID:</label>
+                <input type="text" name="att_id">
                 <br>
             </div>
             <div class="button-container">
@@ -43,10 +41,6 @@
             </div>
         </form>
     </div>
-    
-    <?php
-        echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
-    ?>
 
 </body>
 </html>
