@@ -16,6 +16,7 @@
 <body>
 
     <h1> Attractions Page</h1>
+    <input type="hidden" name="input_type" value="attraction">
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Attraction Form </h3>

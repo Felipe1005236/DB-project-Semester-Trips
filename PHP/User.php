@@ -16,6 +16,7 @@
 <body>
 
     <h1> User Page</h1>
+    <input type="hidden" name="input_type" value="form">
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> User Form </h3>

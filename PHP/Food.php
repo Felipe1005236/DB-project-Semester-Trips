@@ -16,6 +16,7 @@
 <body>
 
     <h1> Food Place Page </h1>
+    <input type="hidden" name="input_type" value="food_place">
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Food Place Form </h3>
