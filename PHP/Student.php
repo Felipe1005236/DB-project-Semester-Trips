@@ -36,10 +36,6 @@
             </div>
         </form>
     </div>
-    
-    <?php
-        echo "<a href="maintenance.html"><h2 class="back">Back to maintenance page</h2></a>";
-    ?>
 
 </body>
 </html>
