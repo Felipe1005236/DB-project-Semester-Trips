@@ -8,13 +8,13 @@ services:
       MYSQL_USER: rfelipe
       MYSQL_PASSWORD: cAAnKz
     ports:
-      - "3306:3306"
+      - "3307:3306"
 
   php:
     build: .
     restart: always
     volumes:
-      - ./Forms:/var/www/html/PHP
+      - ./Forms:/var/www/html/Forms
       - ./HTML:/var/www/html/HTML
       - ./CSS:/var/www/html/CSS
     ports:
