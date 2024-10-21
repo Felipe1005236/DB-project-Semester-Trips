@@ -1,1 +1,15 @@
-lalala
+<?php
+$host = getenv('MYSQL_HOST');
+$dbname = getenv('MYSQL_DATABASE');
+$user = getenv('MYSQL_USER');
+$password = getenv('MYSQL_PASSWORD');
+
+// Create connection
+$conn = new mysqli($host, $user, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully to MySQL database";
+?>
