@@ -4,7 +4,7 @@
 
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background-image: url(images/ip_bkg-transformed.jpeg);
+    background-image: url(../images/ip_bkg-transformed.jpeg);
     /*background-color: rgba(255, 255, 255, 0.3);
     background-blend-mode: lighten;*/
     background-position: center;
@@ -18,12 +18,17 @@ body{
     color: #d2e7ab;
 }
 
-h1, h3, .question{
+h1, .question{
     color: #0f1e25;
     opacity: 100%;
 }
 h1{
     font-size: 30px;
+}
+h3{
+    color: #0f1e25;
+    opacity: 100%;
+    float: left;
 }
 
 .question{
@@ -101,7 +106,7 @@ button:focus{
     color: #d2e7ab;
 }
 
-input[type=text], select, input[type=time]{
+input[type=text], select, input[type=time], input[type=number], input[type=email]{
     height: 30px;
     margin: auto;
     background-color: #d2e7ab;

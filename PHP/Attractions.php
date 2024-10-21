@@ -15,27 +15,26 @@
 
 <body>
 
-    <h1> Food Place Page </h1>
-    <input type="hidden" name="input_type" value="food_place">
+    <h1> Attractions Page</h1>
+    <input type="hidden" name="input_type" value="attraction">
     <form action="connect_ser.php" method="post">
     <div class="center">
-        <h3> Food Place Form </h3>
+        <h3> Attraction Form </h3>
 
         <form>
             <div class="aligning_questions">
-                <label class="question"> Food Place ID:</label>
-                <input type="text" id="food_id" name="food_id">
+                <label class="question"> Name of attraction: </label>
+                <input type="text" name="att_name">
             </div>
             <br>
             <div class="aligning_questions">
-                <label class="question"> Type of cuisine:</label>
-                    <select id="cuisine" name="cuisine_type">
-                    <option value="chinese">chinese</option>
-                    <option value="german">German</option>
-                    <option value="indian">Indian</option>
-                    <option value="turkish">Turkish</option>
-                    <option value="mediterranian">Mediterranian</option>
-                </select>
+                <label class="question"> Entrance fee:</label>
+                <input type="number" id="fee" name="fee">
+            </div>
+            <br>
+            <div class="aligning_questions">
+                <label class="question"> Attraction ID:</label>
+                <input type="text" name="att_id">
                 <br>
             </div>
             <div class="button-container">
@@ -44,7 +43,5 @@
         </form>
     </div>
 
-    <a href="../HTML/maintenance.html">Back to Maintenance page</a>
-    
 </body>
 </html>
