@@ -36,7 +36,7 @@
                     $fee = $conn->real_escape_string($_POST['fee']);
                     $act_id = $conn->real_escape_string($_POST['att_id']);
 
-                    $sql = "INSERT INTO Activity (activity_id, entry_fee) VALUES ('$fee','$att_id')";
+                    $sql = "INSERT INTO Activity (activity_id, entry_fee) VALUES ('$att_id', '$fee')";
 
                     break;
 
