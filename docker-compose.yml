@@ -1,14 +1,12 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: qwerty
+      MYSQL_ROOT_PASSWORD: Diez.cinco5
       MYSQL_DATABASE: rfelipe_db
       MYSQL_USER: rfelipe
-      MYSQL_PASSWORD: Diez.cinco5
+      MYSQL_PASSWORD: cAAnKz
     ports:
       - "3306:3306"
 
@@ -16,9 +14,10 @@ services:
     build: .
     restart: always
     volumes:
-      - ./src:/var/www/html
+      - ./PHP:/var/www/html/PHP
+      - ./HTML:/var/www/html/HTML
+      - ./CSS:/var/www/html/CSS
     ports:
       - "8080:80"
     depends_on:
       - mysql
-    
