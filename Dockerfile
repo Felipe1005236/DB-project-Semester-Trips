@@ -8,7 +8,7 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN a2enmod rewrite
 
 # Copy your application files into the Apache server's document root
-COPY ./PHP /var/www/html/
+COPY ./Forms /var/www/html/
 COPY ./HTML /var/www/html/
 COPY ./CSS /var/www/html/
 

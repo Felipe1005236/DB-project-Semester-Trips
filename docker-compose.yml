@@ -14,7 +14,7 @@ services:
     build: .
     restart: always
     volumes:
-      - ./PHP:/var/www/html/PHP
+      - ./Forms:/var/www/html/PHP
       - ./HTML:/var/www/html/HTML
       - ./CSS:/var/www/html/CSS
     ports:
