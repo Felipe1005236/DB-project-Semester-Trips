@@ -16,6 +16,7 @@
 <body>
 
     <h1> Review Page</h1>
+    <input type="hidden" name="input_type" value="review">
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Review Form </h3>

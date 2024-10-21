@@ -16,6 +16,7 @@
 <body>
 
     <h1> Activities Page </h1>
+    <input type="hidden" name="input_type" value="activity">
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Activities Form </h3>

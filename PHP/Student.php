@@ -16,7 +16,7 @@
 <body>
 
     <h1> Student Page</h1>
-
+    <input type="hidden" name="input_type" value="student">
     <div class="center">
         <h3> Student Form </h3>
         <form action="connect_ser.php" method="post">

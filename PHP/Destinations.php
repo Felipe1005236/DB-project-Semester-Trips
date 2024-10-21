@@ -16,6 +16,7 @@
 <body>
 
     <h1> Destinations Page </h1>
+    <input type="hidden" name="input_type" value="destination">
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Destination Form </h3>

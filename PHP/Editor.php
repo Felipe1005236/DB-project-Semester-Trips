@@ -16,6 +16,7 @@
 <body>
 
     <h1> Edito Page</h1>
+    <input type="hidden" name="input_type" value="editor">
     <form action="connect_ser.php" method="post">
     <div class="center">
         <h3> Editor Form </h3>
