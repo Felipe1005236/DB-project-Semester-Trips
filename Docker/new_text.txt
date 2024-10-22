@@ -13,3 +13,5 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully to MySQL database";
 ?>
+
+test push
