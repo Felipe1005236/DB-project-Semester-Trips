@@ -76,7 +76,7 @@
                     $food_id = $conn->real_escape_string($_POST['food_id']);
                     $cuisine_type = $conn->real_escape_string($_POST['cuisine_type']);
 
-                    $sql = "INSERT INTO Food_place (food_id, cuisine_type), VALUES ('$food_id', '$cuisine_type')";
+                    $sql = "INSERT INTO Food_place (food_id, cuisine_type) VALUES ('$food_id', '$cuisine_type')";
 
                     break;
 
@@ -87,7 +87,7 @@
                     $rating = $conn->real_escape_string($_POST['rating']);
                     $comment = $conn->real_escape_string($_POST['comment']);
 
-                    $sql = "INSERT INTO Reviews (review_id, dest_id, rating, comment), VALUES ('$review_id', '$dest_id', '$rating', '$comment')";
+                    $sql = "INSERT INTO Reviews (review_id, dest_id, rating, comment) VALUES ('$review_id', '$dest_id', '$rating', '$comment')";
 
                     break;
 
