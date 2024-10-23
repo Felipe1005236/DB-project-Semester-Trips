@@ -1,0 +1,61 @@
+Query for finding fees for attractions
+
+echo "<table>";
+echo "<tr class="header">";
+echo "<th class=\"dest_name\">Destination name</th>";
+echo "<th class=\"location\">Location</th>";
+echo "<th class=\"entry_fee\">Entry Fee</th>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
+    echo "<td>" . $row["location"] . "</td>"; 
+    echo "<td>" . $row["entry_fee"] . "</td>"; 
+    echo "</tr>";
+}
+echo "</table>";
+
+Query for finding places open before 10
+
+echo "<table>";
+echo "<tr class=\"header\">";
+echo "<th class=\"dest_name\">Destination name</th>";
+echo "<th class=\"opening_time\">Opening Time</th>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
+    echo "<td>" . $row["opening_time"] . "</td>"; 
+    echo "</tr>";
+}
+echo "</table>";
+
+Query for finding user info
+
+echo "<table>";
+echo "<tr class=\"header\">";
+echo "<th class=\"student_name\">Student name</th>";
+echo "<th class=\"user_name\">Name of user</th>";
+echo "<th class=\"email\">Email</th>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td><a class=\"hidden-link\" href=\"details_page.php?user_id=" . $row["user_id"] . "\">" . $row["student_name"] . "</a></td>";
+    echo "<td>" . $row["user_name"] . "</td>"; 
+    echo "<td>" . $row["email"] . "</td>"; 
+    echo "</tr>";
+}
+echo "</table>";
+
+Query for finding specific cuisine
+
+echo "<table>";
+echo "<tr class=\"header\">";
+echo "<th class=\"destination_name\">Desgtination name</th>";
+echo "<th class=\"location\">Location</th>";
+echo "<th class=\"cuisine\">Cuisine Type</th>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
+    echo "<td>" . $row["location"] . "</td>"; 
+    echo "<td>" . $row["cuisine_type"] . "</td>"; 
+    echo "</tr>";
+}
+echo "</table>";
