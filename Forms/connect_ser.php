@@ -108,7 +108,7 @@
                     $user_name = $connection->real_escape_string($_POST['name']);
                     $email = $connection->real_escape_string($_POST['email']);
 
-                    $sql = "INSERT INTO User (user_id, name, email,) VALUES ('$user_id', '$user_name', '$email')"
+                    $sql = "INSERT INTO User (user_id, name, email,) VALUES ('$user_id', '$user_name', '$email')";
 
                     break;
                 
