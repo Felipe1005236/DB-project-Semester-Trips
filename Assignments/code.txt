@@ -1,5 +1,13 @@
 Query for finding fees for attractions
 
+SELECT d.name AS destination_name, d.location, a.entry_fee
+FROM Destination AS d
+INNER JOIN Attraction AS a ON d.dest_id = a.attraction_id
+ORDER BY d.name
+WHERE a.entry_fee > user_input;
+
+!!join this table with the destinations table for details!!
+
 echo "<table>";
 echo "<tr class="header">";
 echo "<th class=\"dest_name\">Destination name</th>";
@@ -14,7 +22,44 @@ while($row = $result->fetch_assoc()) {
 }
 echo "</table>";
 
+for details page:
+
+echo "<table>";
+echo "<tr class=\"table-header\">";
+echo "<th>Attribute</th><th>Value</th>";
+echo "</tr>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>Destination ID</td>";
+    echo "<td>" . $row["dest_id"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Destination Name</td>";
+    echo "<td>" . $row["name"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Location</td>";
+    echo "<td>" . $row["location"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Opening Time</td>";
+    echo "<td>" . (($row["opening_time"] == 1) ? "Yes":"No"). "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Closing Time</td>";
+    echo "<td>" . $row["closing_time"] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
+
+
 Query for finding places open before 10
+
+Suggestion: delete location specification for more results
+
+SELECT name, opening_time
+    -> FROM Destination
+    -> WHERE opening_time < '10:00:00';
 
 echo "<table>";
 echo "<tr class=\"header\">";
@@ -28,7 +73,41 @@ while($row = $result->fetch_assoc()) {
 }
 echo "</table>";
 
+For details page:
+echo "<table>";
+echo "<tr class=\"table-header\">";
+echo "<th>Attribute</th><th>Value</th>";
+echo "</tr>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>Destination ID</td>";
+    echo "<td>" . $row["dest_id"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Destination Name</td>";
+    echo "<td>" . $row["name"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Location</td>";
+    echo "<td>" . $row["location"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Opening Time</td>";
+    echo "<td>" . (($row["opening_time"] == 1) ? "Yes":"No"). "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Closing Time</td>";
+    echo "<td>" . $row["closing_time"] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
+
+
 Query for finding user info
+
+SELECT s.username AS student_username, u.name AS user_name, u.email
+    -> FROM Student AS s
+    -> JOIN User AS u ON s.student_id = u.user_id;
 
 echo "<table>";
 echo "<tr class=\"header\">";
@@ -44,7 +123,46 @@ while($row = $result->fetch_assoc()) {
 }
 echo "</table>";
 
+for details page:
+
+echo "<table>";
+echo "<tr class=\"table-header\">";
+echo "<th>Attribute</th><th>Value</th>";
+echo "</tr>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>User ID</td>";
+    echo "<td>" . $row["user_id"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Name</td>";
+    echo "<td>" . $row["name"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Email</td>";
+    echo "<td>" . $row["email"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>School</td>";
+    echo "<td>" . $row["school"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Username</td>";
+    echo "<td>" . $row["username"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Age</td>";
+    echo "<td>" . $row["age"] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
+
 Query for finding specific cuisine
+
+SELECT d.name AS destination_name, d.location, f.cuisine_type
+    -> FROM Destination AS d
+    -> INNER JOIN Food_place AS f ON d.dest_id = f.food_id
+    -> WHERE f.cuisine_type = user_input;
 
 echo "<table>";
 echo "<tr class=\"header\">";
@@ -56,6 +174,40 @@ while($row = $result->fetch_assoc()) {
     echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
     echo "<td>" . $row["location"] . "</td>"; 
     echo "<td>" . $row["cuisine_type"] . "</td>"; 
+    echo "</tr>";
+}
+echo "</table>";
+
+for details page:
+
+echo "<table>";
+echo "<tr class=\"table-header\">";
+echo "<th>Attribute</th><th>Value</th>";
+echo "</tr>";
+while($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>Destination ID</td>";
+    echo "<td>" . $row["dest_id"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Name</td>";
+    echo "<td>" . $row["name"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Location</td>";
+    echo "<td>" . $row["location"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Opening Time</td>";
+    echo "<td>" . $row["opening_time"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Closing Time</td>";
+    echo "<td>" . $row["closing_time"] . "</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td>Cuisine</td>";
+    echo "<td>" . $row["cuisine_type"] . "</td>";
     echo "</tr>";
 }
 echo "</table>";
