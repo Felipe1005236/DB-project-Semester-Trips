@@ -13,7 +13,7 @@
 <div> 
     <?php
 
-    include 'requirements.php'
+    include 'requirements.php';
 
     $connection = new mysqli($servername, $username, $password, $dbname);
 
