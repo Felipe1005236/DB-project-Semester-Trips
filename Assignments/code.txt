@@ -1,10 +1,12 @@
 Query for finding fees for attractions
+(user inputs fee and query finds attractions that cost up to that fee)
 
 SELECT d.name AS destination_name, d.location, a.entry_fee
 FROM Destination AS d
 INNER JOIN Attraction AS a ON d.dest_id = a.attraction_id
-ORDER BY d.name
-WHERE a.entry_fee > user_input;
+WHERE a.entry_fee < user_input
+ORDER BY d.name;
+
 
 !!join this table with the destinations table for details!!
 
@@ -54,12 +56,11 @@ echo "</table>";
 
 
 Query for finding places open before 10
+(user input specific location and finds opening time for it)
 
-Suggestion: delete location specification for more results
-
-SELECT name, opening_time
-    -> FROM Destination
-    -> WHERE opening_time < '10:00:00';
+SELECT name, opening_time,
+FROM Destination
+WHERE name = :user_input;
 
 echo "<table>";
 echo "<tr class=\"header\">";
@@ -104,10 +105,12 @@ echo "</table>";
 
 
 Query for finding user info
+(user enters a students name and the query returns user info)
 
 SELECT s.username AS student_username, u.name AS user_name, u.email
-    -> FROM Student AS s
-    -> JOIN User AS u ON s.student_id = u.user_id;
+FROM Student AS s
+JOIN User AS u ON s.student_id = u.user_id
+WHERE u.name = :user_input;
 
 echo "<table>";
 echo "<tr class=\"header\">";
@@ -158,11 +161,13 @@ while($row = $result->fetch_assoc()) {
 echo "</table>";
 
 Query for finding specific cuisine
+(user input cuisine type and query finds places that have that cuisine)
 
 SELECT d.name AS destination_name, d.location, f.cuisine_type
-    -> FROM Destination AS d
-    -> INNER JOIN Food_place AS f ON d.dest_id = f.food_id
-    -> WHERE f.cuisine_type = user_input;
+FROM Destination AS d
+INNER JOIN Food_place AS f ON d.dest_id = f.food_id 
+WHERE f.cuisine_type = :user_input;
+
 
 echo "<table>";
 echo "<tr class=\"header\">";
