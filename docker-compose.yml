@@ -17,6 +17,8 @@ services:
       - ./Forms:/var/www/html/Forms
       - ./HTML:/var/www/html/HTML
       - ./CSS:/var/www/html/CSS
+      - ./Search_Files:/var/www/html/Search_Files
+      
     ports:
       - "8080:80"
     depends_on:
