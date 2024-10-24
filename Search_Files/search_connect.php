@@ -84,6 +84,8 @@
                 break;
 
             case 'students':
+                
+                $user_input = $_REQUEST["student"]
 
                 $sql = "SELECT s.username AS student_username, u.name AS user_name, u.email
                         FROM Student AS s
@@ -91,7 +93,7 @@
                 
                 $result = $connection->query($sql);
 
-            case 'cuisine_type':
+            case 'cuisine':
 
                 $sql = "SELECT d.name AS destination_name, d.location, f.cuisine_type
                         FROM Destination AS d
