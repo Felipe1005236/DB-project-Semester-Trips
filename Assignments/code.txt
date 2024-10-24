@@ -93,7 +93,7 @@ while($row = $result->fetch_assoc()) {
     echo "<td>Destination ID</td>";
     echo "<td>" . $row["dest_id"] . "</td>";
     echo "</tr>";
-    echo "<tr>";
+    echo "<tr>";  
     echo "<td>Destination Name</td>";
     echo "<td>" . $row["name"] . "</td>";
     echo "</tr>";
