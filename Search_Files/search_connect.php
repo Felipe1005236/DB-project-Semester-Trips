@@ -30,7 +30,7 @@
                 $sql = "SELECT d.name AS destination_name, d.location, a.entry_fee
                         FROM Destination AS d
                         INNER JOIN Attraction AS a ON d.dest_id = a.attraction_id
-                        where a.entry_fee < " . $user_input . " ORDER BY d.name;"
+                        where a.entry_fee < " . $user_input . " ORDER BY d.name;";
 
                 $result = $connection->query($sql);
 
@@ -61,7 +61,7 @@
 
                 $sql = "SELECT name, opening_time
                         FROM Destination
-                        WHERE opening_time < '10:00:00'";
+                        WHERE name < ". $user_input . ";";
                         
                 $result = $connection->query($sql);
 
@@ -89,18 +89,59 @@
 
                 $sql = "SELECT s.username AS student_username, u.name AS user_name, u.email
                         FROM Student AS s
-                        JOIN User AS u ON s.student_id = u.user_id;";
+                        JOIN User AS u ON s.student_id = u.user_id;
+                        WHERE u.name = " . $user_input . ";";
                 
                 $result = $connection->query($sql);
+
+                if($result){
+                    if($result->num_rows > 0){
+                        echo "<table>";
+                        echo "<tr class=\"header\">";
+                        echo "<th class=\"student_name\">Student name</th>";
+                        echo "<th class=\"user_name\">Name of user</th>";
+                        echo "<th class=\"email\">Email</th>";
+                        while($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?user_id=" . $row["user_id"] . "\">" . $row["student_name"] . "</a></td>";
+                            echo "<td>" . $row["user_name"] . "</td>"; 
+                            echo "<td>" . $row["email"] . "</td>"; 
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                    }
+                }
+
+                break;
 
             case 'cuisine':
 
                 $sql = "SELECT d.name AS destination_name, d.location, f.cuisine_type
                         FROM Destination AS d
                         INNER JOIN Food_place AS f ON d.dest_id = f.food_id
-                        WHERE f.cuisine_type = 'Italian';";
+                        WHERE f.cuisine_type = " . $user_input . ";";
 
                 $result = $connection->query($sql);
+
+                if($result){
+                    if($result->num_rows > 0){
+                        echo "<table>";
+                        echo "<tr class=\"header\">";
+                        echo "<th class=\"destination_name\">Desgtination name</th>";
+                        echo "<th class=\"location\">Location</th>";
+                        echo "<th class=\"cuisine\">Cuisine Type</th>";
+                        while($row = $result->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
+                            echo "<td>" . $row["location"] . "</td>"; 
+                            echo "<td>" . $row["cuisine_type"] . "</td>"; 
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                    }
+                }
+
+                break;
         }
 
         $result = $connection->query($sql);
