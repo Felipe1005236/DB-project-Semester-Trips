@@ -30,7 +30,7 @@
                 $sql = "SELECT d.name AS destination_name, d.location, a.entry_fee
                         FROM Destination AS d
                         INNER JOIN Attraction AS a ON d.dest_id = a.attraction_id
-                        where a.entry_fee < " . $user_input . " ORDER BY d.name;"
+                        where a.entry_fee < " . $user_input . " ORDER BY d.name;";
 
                 $result = $connection->query($sql);
 
@@ -61,7 +61,7 @@
 
                 $sql = "SELECT name, opening_time
                         FROM Destination
-                        WHERE name < ". $user_input . ";"
+                        WHERE name < ". $user_input . ";";
                         
                 $result = $connection->query($sql);
 
