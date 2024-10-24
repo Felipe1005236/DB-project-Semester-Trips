@@ -44,7 +44,7 @@
                         echo "</tr>"
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
+                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "&type=max_fee\">" . $row["name"] . "</a></td>";
                             echo "<td>" . $row["location"] . "</td>"; 
                             echo "<td>" . $row["entry_fee"] . "</td>"; 
                             echo "</tr>";
@@ -73,7 +73,7 @@
                         echo "<th class=\"opening_time\">Opening Time</th>";
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
+                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "&type=attraction\">" . $row["name"] . "</a></td>";
                             echo "<td>" . $row["opening_time"] . "</td>"; 
                             echo "</tr>";
                         }
