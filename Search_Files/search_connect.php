@@ -103,7 +103,7 @@
                         echo "<th class=\"email\">Email</th>";
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?user_id=" . $row["user_id"] . "\">" . $row["student_name"] . "</a></td>";
+                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?user_id=" . $row["user_id"] . "&type=student\">" . $row["student_name"] . "</a></td>";
                             echo "<td>" . $row["user_name"] . "</td>"; 
                             echo "<td>" . $row["email"] . "</td>"; 
                             echo "</tr>";
@@ -132,7 +132,7 @@
                         echo "<th class=\"cuisine\">Cuisine Type</th>";
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "\">" . $row["name"] . "</a></td>";
+                            echo "<td><a class=\"hidden-link\" href=\"details_page.php?dest_id=" . $row["dest_id"] . "&type=cuisine\">" . $row["name"] . "</a></td>";
                             echo "<td>" . $row["location"] . "</td>"; 
                             echo "<td>" . $row["cuisine_type"] . "</td>"; 
                             echo "</tr>";
