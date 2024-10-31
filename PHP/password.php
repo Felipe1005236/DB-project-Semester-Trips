@@ -28,7 +28,7 @@ if (isset($_POST["login"])) {
         // Verify password
         if ($user && password_verify($password, $user['passowrd'])) {
             $_SESSION["username"] = $username;
-            header("location: maintenance.html");
+            header("location: ../HTML/maintenance.html");
             exit();
         } else {
             $message = '<label>Invalid username or password!</label>';
