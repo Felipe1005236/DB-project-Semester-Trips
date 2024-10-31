@@ -1,35 +1,39 @@
 <?php
 session_start();
-
 include "../Forms/requirements.php";
 
-$connection = new mysqli($servername, $username, $password, $dbname)
+// Database connection
+$connection = new mysqli($servername, $username, $password, $dbname);
+if ($connection->connect_errno) {
+    echo "Failed to connect to database. " . $connection->connect_error;
+    exit();
+}
 
-        if ($connection->connect_errno) {
-            echo "Failed to connect to database. " . $mysqli->connect_error;
-            exit();
-        }
-
-
+// Login handling
 if (isset($_POST["login"])) {
-   if (empty($_POST["username"]) || empty($_POST["password"])) {
-       $message = '<label>Both fields have to be filled!</label>';
-   } else {
-       $password = $_POST["password"];
+    if (empty($_POST["username"]) || empty($_POST["password"])) {
+        $message = '<label>Both fields must be filled!</label>';
+    } else {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
 
-       $query = "SELECT * FROM Users WHERE username = 'admin' AND password = :password";
-       $statement = $connection->prepare($query);
-       $statement->execute(['password' => $password]);
-       $result = $statement->fetchAll();
+        // Prepare SQL query to get user info
+        $query = "SELECT * FROM Users WHERE username = ?";
+        $statement = $connection->prepare($query);
+        $statement->bind_param("s", $username);
+        $statement->execute();
+        $result = $statement->get_result();
+        $user = $result->fetch_assoc();
 
-       if (count($result) > 0) {
-           $_SESSION["username"] = 'admin';
-           header("location: maintenance.html");
-           exit();
-       } else {
-           $message = '<label>Password is incorrect!</label>';
-       }
-   }
+        // Verify password
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION["username"] = $username;
+            header("location: maintenance.html");
+            exit();
+        } else {
+            $message = '<label>Invalid username or password!</label>';
+        }
+    }
 }
 ?>
 

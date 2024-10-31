@@ -17,6 +17,8 @@ services:
       - ./Forms:/var/www/html/Forms
       - ./HTML:/var/www/html/HTML
       - ./CSS:/var/www/html/CSS
+      - ./PHP:/var/www/html/PHP
+      - ./images:/var/www/html/images
       - ./Search_Files:/var/www/html/Search_Files
       
     ports:
