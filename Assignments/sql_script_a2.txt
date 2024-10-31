@@ -1,15 +1,20 @@
-Working scripts
-
 CREATE TABLE User
 (
- user_id INT PRIMARY KEY,
+ user_id INT PRIMARY KEY AUTO_INCREMENT,
  name VARCHAR(100),
  email VARCHAR(100)
 );
 
+CREATE TABLE User_ad
+(
+  user_id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  passowrd VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE Student
 (
- student_id INT PRIMARY KEY,
+ student_id INT PRIMARY KEY AUTO_INCREMENT,
  school VARCHAR(100),
  username VARCHAR(100),
  age INT,
@@ -18,7 +23,7 @@ CREATE TABLE Student
 
 CREATE TABLE Editor
 (
- editor_id INT PRIMARY KEY,
+ editor_id INT PRIMARY KEY AUTO_INCREMENT,
  type VARCHAR(50),
  username VARCHAR(100),
  FOREIGN KEY(editor_id) REFERENCES User(user_id)
@@ -26,7 +31,7 @@ CREATE TABLE Editor
 
 CREATE TABLE Destination
 (
- dest_id INT PRIMARY KEY,
+ dest_id INT PRIMARY KEY AUTO_INCREMENT,
  name VARCHAR(100),
  location VARCHAR(100),
  opening_time TIME,
@@ -35,56 +40,56 @@ CREATE TABLE Destination
 
 CREATE TABLE Activity
 (
- activity_id INT PRIMARY KEY,
+ activity_id INT PRIMARY KEY AUTO_INCREMENT,
  entry_fee INT,
  FOREIGN KEY(activity_id) REFERENCES Destination(dest_id)
 );
 
 CREATE TABLE Attraction
 (
- attraction_id INT PRIMARY KEY,
+ attraction_id INT PRIMARY KEY AUTO_INCREMENT,
  entry_fee INT,
  FOREIGN KEY(attraction_id) REFERENCES Destination(dest_id)
 );
 
 CREATE TABLE Food_place
 (
- food_id INT PRIMARY KEY,
+ food_id INT PRIMARY KEY AUTO_INCREMENT,
  cuisine_type VARCHAR(100),
  FOREIGN KEY(food_id) REFERENCES Destination(dest_id)
 );
 
 CREATE TABLE Day
 (
- day_id INT PRIMARY KEY,
+ day_id INT PRIMARY KEY AUTO_INCREMENT,
  activity_type VARCHAR(100),
  FOREIGN KEY(day_id) REFERENCES Activity(activity_id)
 );
 
 CREATE TABLE Night
 (
- night_id INT PRIMARY KEY,
+ night_id INT PRIMARY KEY AUTO_INCREMENT,
  last_transport TIME,
  FOREIGN KEY(night_id) REFERENCES Activity(activity_id)
 );
 
 CREATE TABLE Indoor
 (
- indoor_id INT PRIMARY KEY,
+ indoor_id INT PRIMARY KEY AUTO_INCREMENT,
  exhibitions DATE,
  FOREIGN KEY(indoor_id) REFERENCES Attraction(attraction_id)
 );
 
 CREATE TABLE Outdoor
 (
- outdoor_id INT PRIMARY KEY,
+ outdoor_id INT PRIMARY KEY AUTO_INCREMENT,
  restroom_availability BIT,
  FOREIGN KEY(outdoor_id) REFERENCES Attraction(attraction_id)
 );
 
 CREATE TABLE Restaurant
 (
- restaurant_id INT PRIMARY KEY,
+ restaurant_id INT PRIMARY KEY AUTO_INCREMENT,
  menu VARCHAR(100),
  contact_info VARCHAR(100),
  FOREIGN KEY(restaurant_id) REFERENCES Food_place(food_id)
@@ -92,14 +97,14 @@ CREATE TABLE Restaurant
 
 CREATE TABLE Street_food
 (
- streetf_id INT PRIMARY KEY,
+ streetf_id INT PRIMARY KEY AUTO_INCREMENT,
  special_offers VARCHAR(100),
  FOREIGN KEY(streetf_id) REFERENCES Food_place(food_id)
 );
 
 CREATE TABLE Reviews
 (
-  review_id INT PRIMARY KEY,
+  review_id INT PRIMARY KEY AUTO_INCREMENT,
   dest_id INT,
   rating INT,
   comment TEXT,

@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <title>
-        Railway Getaway
-    </title>
+    <title>Railway Getaway</title>
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/search_page.css">
@@ -16,27 +14,26 @@
 <body>
     <div class="img_container">
         <img src="../images/window-transformed.png" alt="background" id="window">
-        <!--user inputs a destination, gets attractions there and entry fee of those attractions-->
+        <!-- User inputs a destination, gets attractions there and entry fee of those attractions -->
 
         <div class="form_on_img">
-            <h1> Find locations with certain fee</h1>
+            <h1>Find locations with a certain fee</h1>
             <input type="hidden" name="input_type" value="max_fee">
-            <form action="connect_ser.php" method="post">
-            <div class="aligning_questions">
-                <label class="question"> Enter fee (in Euros):</label>
-                <input type="number" id="max_fee" name="max_fee" placeholder="e.g. 25">
-            </div>
-            <br>
-            <div class="button-container">
-                <button type="submit">Search</button>
-            </div>
-            </form>
+            <form action="../Forms/connect_ser.php" method="post">
+                <input type="hidden" name="input_type" value="max_fee">
+                <div class="aligning_questions">
+                    <label class="question">Enter fee (in Euros):</label>
+                    <input type="number" id="max_fee" name="max_fee" placeholder="e.g. 25">
+                </div>
+                <br>
+                <div class="button-container">
+                    <button type="submit">Search</button>
+                </div>
+            </form>            
         </div>
         <div>
             <h3><a class="link" href="../HTML/search_page.html">Back to Search Page</a></h3>
         </div>
-
     </div>
-    
 </body>
 </html>

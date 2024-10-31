@@ -11,6 +11,8 @@ RUN a2enmod rewrite
 COPY ./Forms /var/www/html/
 COPY ./HTML /var/www/html/
 COPY ./CSS /var/www/html/
+COPY ./PHP /var/www/html/
+COPY ./images /var/www/html/
 COPY ./Search_Files /var/www/html/
 
 # Set working directory
