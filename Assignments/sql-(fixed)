@@ -1,0 +1,150 @@
+Working scripts
+
+CREATE TABLE User
+(
+ user_id INT PRIMARY KEY,
+ name VARCHAR(100),
+ email VARCHAR(100)
+);
+
+CREATE TABLE User_ad
+(
+  user_id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) UNIQUE NOT NULL,
+  passowrd VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Student
+(
+ student_id INT PRIMARY KEY,
+ school VARCHAR(100),
+ username VARCHAR(100),
+ age INT,
+ FOREIGN KEY(student_id) REFERENCES User(user_id)
+);
+
+CREATE TABLE Editor
+(
+ editor_id INT PRIMARY KEY,
+ type VARCHAR(50),
+ username VARCHAR(100),
+ FOREIGN KEY(editor_id) REFERENCES User(user_id)
+);
+
+CREATE TABLE Destination
+(
+ dest_id INT PRIMARY KEY,
+ name VARCHAR(100),
+ location VARCHAR(100),
+ opening_time TIME,
+ closing_time TIME
+);
+
+CREATE TABLE Activity
+(
+ activity_id INT PRIMARY KEY,
+ entry_fee INT,
+ FOREIGN KEY(activity_id) REFERENCES Destination(dest_id)
+);
+
+CREATE TABLE Attraction
+(
+ attraction_id INT PRIMARY KEY,
+ entry_fee INT,
+ FOREIGN KEY(attraction_id) REFERENCES Destination(dest_id)
+);
+
+CREATE TABLE Food_place
+(
+ food_id INT PRIMARY KEY,
+ cuisine_type VARCHAR(100),
+ FOREIGN KEY(food_id) REFERENCES Destination(dest_id)
+);
+
+CREATE TABLE Day
+(
+ day_id INT PRIMARY KEY,
+ activity_type VARCHAR(100),
+ FOREIGN KEY(day_id) REFERENCES Activity(activity_id)
+);
+
+CREATE TABLE Night
+(
+ night_id INT PRIMARY KEY,
+ last_transport TIME,
+ FOREIGN KEY(night_id) REFERENCES Activity(activity_id)
+);
+
+CREATE TABLE Indoor
+(
+ indoor_id INT PRIMARY KEY,
+ exhibitions DATE,
+ FOREIGN KEY(indoor_id) REFERENCES Attraction(attraction_id)
+);
+
+CREATE TABLE Outdoor
+(
+ outdoor_id INT PRIMARY KEY,
+ restroom_availability BIT,
+ FOREIGN KEY(outdoor_id) REFERENCES Attraction(attraction_id)
+);
+
+CREATE TABLE Restaurant
+(
+ restaurant_id INT PRIMARY KEY,
+ menu VARCHAR(100),
+ contact_info VARCHAR(100),
+ FOREIGN KEY(restaurant_id) REFERENCES Food_place(food_id)
+);
+
+CREATE TABLE Street_food
+(
+ streetf_id INT PRIMARY KEY,
+ special_offers VARCHAR(100),
+ FOREIGN KEY(streetf_id) REFERENCES Food_place(food_id)
+);
+
+CREATE TABLE Reviews
+(
+  review_id INT PRIMARY KEY,
+  dest_id INT,
+  rating INT,
+  comment TEXT,
+  FOREIGN KEY(dest_id) REFERENCES Destination(dest_id)
+);
+
+CREATE TABLE Student_Reviews
+(
+  student_id INT,
+  review_id INT,
+  FOREIGN KEY(student_id) REFERENCES Student(student_id),
+  FOREIGN KEY(review_id) REFERENCES Reviews(review_id),
+  PRIMARY KEY(student_id, review_id)
+);
+
+CREATE TABLE Editor_Reviews
+(
+  editor_id INT,
+  review_id INT,
+  FOREIGN KEY(editor_id) REFERENCES Editor(editor_id),
+  FOREIGN KEY(review_id) REFERENCES Reviews(review_id),
+  PRIMARY KEY(editor_id, review_id)
+);
+
+CREATE TABLE Student_Destination
+(
+  student_id INT,
+  dest_id INT,
+  FOREIGN KEY(student_id) REFERENCES Student(student_id),
+  FOREIGN KEY(dest_id) REFERENCES Destination(dest_id),
+  PRIMARY KEY(student_id, dest_id)
+);
+
+CREATE TABLE Editor_Destination
+(
+  editor_id INT,
+  dest_id INT,
+  FOREIGN KEY(editor_id) REFERENCES Editor(editor_id),
+  FOREIGN KEY(dest_id) REFERENCES Destination(dest_id),
+  PRIMARY KEY(editor_id, dest_id)
+);

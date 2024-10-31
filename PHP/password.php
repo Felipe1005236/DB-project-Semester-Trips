@@ -17,7 +17,6 @@ if (isset($_POST["login"])) {
    } else {
        $password = $_POST["password"];
 
-       // Use prepared statement with PDO
        $query = "SELECT * FROM Users WHERE username = 'admin' AND password = :password";
        $statement = $connection->prepare($query);
        $statement->execute(['password' => $password]);
