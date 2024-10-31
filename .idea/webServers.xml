@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="31389fac-ef6c-46f5-b48a-8b50a2ddacc3" name="SemesterTripsLocal" url="http://localhost:80">
+        <fileTransfer mountedRoot="$PROJECT_DIR$/../../../../../../Local Host " accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
