@@ -11,11 +11,11 @@ if ($connection->connect_errno) {
 
 // Login handling
 if (isset($_POST["login"])) {
-    if (empty($_POST["username"]) || empty($_POST["password"])) {
+    if (empty($_POST["username"]) || empty($_POST["passowrd"])) {
         $message = '<label>Both fields must be filled!</label>';
     } else {
         $username = $_POST["username"];
-        $password = $_POST["password"];
+        $password = $_POST["passowrd"];
 
         // Prepare SQL query to get user info
         $query = "SELECT * FROM User_ad WHERE username = ?";
@@ -26,7 +26,7 @@ if (isset($_POST["login"])) {
         $user = $result->fetch_assoc();
 
         // Verify password
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && password_verify($password, $user['passowrd'])) {
             $_SESSION["username"] = $username;
             header("location: maintenance.html");
             exit();
@@ -59,7 +59,7 @@ if (isset($_POST["login"])) {
        <label>User Name:</label><br><br>
        <input type="text" name="username" class="form-control" required/><br/><br/>
        <label>Password:</label><br><br>
-       <input type="password" name="password" class="form-control" required/><br/><br>
+       <input type="password" name="passowrd" class="form-control" required/><br/><br>
        <input type="submit" name="login" class="btn btn-info" value="Login"/>
    </form>
    </section>
