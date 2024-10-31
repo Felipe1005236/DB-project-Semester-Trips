@@ -18,7 +18,7 @@ if (isset($_POST["login"])) {
         $password = $_POST["password"];
 
         // Prepare SQL query to get user info
-        $query = "SELECT * FROM Users WHERE username = ?";
+        $query = "SELECT * FROM User_ad WHERE username = ?";
         $statement = $connection->prepare($query);
         $statement->bind_param("s", $username);
         $statement->execute();
