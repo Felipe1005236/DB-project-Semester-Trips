@@ -1,4 +1,4 @@
-global$servername; <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,8 @@ global$servername; <!DOCTYPE html>
     <input id ="autocomplete">
 
     <?php
-        include "./requirements.php";
+
+        include "../Forms/requirements.php";
 
         $connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -26,7 +27,7 @@ global$servername; <!DOCTYPE html>
 
         $res = $connection->query($query);
 
-        $tags = array();
+        $tags = [];
 
         if($res){
             if($res->num_rows > 0){
@@ -41,5 +42,11 @@ global$servername; <!DOCTYPE html>
         echo "<script>$(\"#autocomplete\").autocomplete({source: $real_result});</script>";
         
     ?>
+
+    <script>
+        $("#autocomplete").autocomplete({
+            source: ["Hamburg", "Bremen", "Dresden", "Hannover"]
+        });
+    </script>
 </body>
 </html>
