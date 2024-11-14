@@ -42,11 +42,5 @@
         echo "<script>$(\"#autocomplete\").autocomplete({source: $real_result});</script>";
         
     ?>
-
-    <script>
-        $("#autocomplete").autocomplete({
-            source: ["Hamburg", "Bremen", "Dresden", "Hannover"]
-        });
-    </script>
 </body>
 </html>
