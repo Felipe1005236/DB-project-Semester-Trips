@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -21,6 +24,7 @@
         <div class="form_on_img">
             <h1> Find Opening Times for a location</h1>
             <input type="hidden" name="input_type" value="attraction">
+
             <form action="connect_ser.php" method="post">
             <div class="aligning_questions">
                 <label for="autocomplete" class="question"> Location:</label>
@@ -37,6 +41,27 @@
         </div>
 
     </div>
+
+    <script>
+        $("#autocomplete").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: '../PHP/opening_times.php', // Ensure this points to the correct PHP file
+                    type: 'GET',
+                    dataType: 'json'
+                    //data: { term: request.term },
+                    success: function(data) {
+                        response(data);
+                        //response(JSON.parse(data));
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("AJAX Error:", error);
+                    }
+                });
+            },
+            minLength: 1
+        });
+    </script>
     
 </body>
 </html>
