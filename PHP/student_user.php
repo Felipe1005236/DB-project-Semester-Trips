@@ -23,7 +23,7 @@
             die("Connection failed: " . $connection->connect_error);
         }
 
-        $query = "SELECT * FROM Destination";
+        $query = "SELECT * FROM User";
 
         $res = $connection->query($query);
 
@@ -42,5 +42,11 @@
         echo "<script>$(\"#autocomplete\").autocomplete({source: $real_result});</script>";
         
     ?>
+
+    <!-- <script>
+        $("#autocomplete").autocomplete({
+            source: ["Hamburg", "Bremen", "Dresden", "Hannover"]
+        });
+    </script> -->
 </body>
 </html>

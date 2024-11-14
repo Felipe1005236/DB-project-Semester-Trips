@@ -32,7 +32,7 @@
         if($res){
             if($res->num_rows > 0){
                 while($row = $res->fetch_assoc()){
-                    $tags[] = $row["name"];
+                    $tags[] = $row["location"];
                 }
             }
         }
@@ -42,5 +42,11 @@
         echo "<script>$(\"#autocomplete\").autocomplete({source: $real_result});</script>";
         
     ?>
+
+    <!-- <script>
+        $("#autocomplete").autocomplete({
+            source: ["Hamburg", "Bremen", "Dresden", "Hannover"]
+        });
+    </script> -->
 </body>
 </html>
