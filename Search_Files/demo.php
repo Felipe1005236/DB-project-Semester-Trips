@@ -14,8 +14,7 @@
     <input id ="autocomplete">
 
     <?php
-
-        include "../Forms/requirements.php";
+        include "./requirements.php";
 
         $connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -27,7 +26,7 @@
 
         $res = $connection->query($query);
 
-        $tags = [];
+        $tags = array();
 
         if($res){
             if($res->num_rows > 0){
