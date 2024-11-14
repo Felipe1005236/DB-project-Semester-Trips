@@ -44,8 +44,13 @@
   $("#student").autocomplete({
     source: function(request, response) {
       $.ajax({
+<<<<<<< HEAD
+        url: '../HTML/autocomplete_new_student.php', // Path to PHP file for database results
+        type: 'GET',
+=======
         url: '../Forms/autocompleteEndpoint_studentSearch.php', // Path to PHP file for database results
         type: 'POST',
+>>>>>>> 001f33fbdea76ca3ee7361a5871d263aa4ca4c4f
         data: { term: request.term },
         success: function(data) {
           response(JSON.parse(data));
@@ -56,4 +61,8 @@
   });
 </script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 001f33fbdea76ca3ee7361a5871d263aa4ca4c4f
