@@ -10,8 +10,32 @@ global$dbname; global$password; global$username; global$servername; <!DOCTYPE ht
 </head>
 <body>
 
-<label for="autocomplete">Select a Location</label>
-<input id ="autocomplete">
+<div class="img_container">
+        <img src="../images/window-transformed.png" alt="background" id="window">
+        <!--user inputs a destination, gets attractions there and entry fee of those attractions-->
+
+        <div class="form_on_img">
+            <h1> Find Restaurants with specific cuisine</h1>
+            <input type="hidden" name="input_type" value="cuisine">
+            <form action="connect_ser.php" method="post">
+            <div class="aligning_questions">
+            <label for="autocomplete">Select a cuisine</label>
+            <input id ="autocomplete">
+                <!-- <label class="question"> Cuisine type:</label>
+                <input type="text" id="cuisine_type" name="cuisine_type" placeholder="e.g. Chinese, German"> -->
+            </div>
+            <br>
+            <div class="button-container">
+                <button type="submit">Search</button>
+            </div>
+            </form>
+        </div>
+        <div>
+            <h3><a class="link" href="../HTML/search_page.html">Back to Search Page</a></h3>
+        </div>
+</div>
+<!-- <label for="autocomplete">Select a Location</label>
+<input id ="autocomplete"> -->
 
 <?php
 

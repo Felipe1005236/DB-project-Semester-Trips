@@ -10,8 +10,32 @@
 </head>
 <body>
 
-    <label for="autocomplete">Select a Location</label>
-    <input id ="autocomplete">
+<div class="img_container">
+        <img src="../images/window-transformed.png" alt="background" id="window">
+        <!--user inputs a destination, gets attractions there and entry fee of those attractions-->
+
+        <div class="form_on_img">
+            <h1> Find Opening Times for a location</h1>
+            <input type="hidden" name="input_type" value="attraction">
+            <form action="connect_ser.php" method="post">
+            <div class="aligning_questions">
+            <label for="autocomplete">Select a Location</label>
+            <input id ="autocomplete">
+                <!-- <label for="autocomplete" class="question"> Location:</label>
+                <input itemid="autocomplete" type="text" id="destination" name="destination" placeholder="e.g. Bremer Kunsthalle"> -->
+            </div>
+            <br>
+            <div class="button-container">
+                <button type="submit">Search</button>
+            </div>
+            </form>
+        </div>
+        <div>
+            <h3><a class="link" href="../HTML/search_page.html">Back to Search Page</a></h3>
+        </div>
+
+    </div>
+
 
     <?php
 

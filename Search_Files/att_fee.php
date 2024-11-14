@@ -10,8 +10,33 @@
 </head>
 <body>
 
-    <label for="autocomplete">Select a Location</label>
-    <input id ="autocomplete">
+<div class="img_container">
+        <img src="../images/window-transformed.png" alt="background" id="window">
+        <!-- User inputs a destination, gets attractions there and entry fee of those attractions -->
+
+        <div class="form_on_img">
+            <h1>Find locations with a certain fee</h1>
+            <input type="hidden" name="input_type" value="max_fee">
+            <form action="../Forms/connect_ser.php" method="post">
+                <input type="hidden" name="input_type" value="max_fee">
+                <div class="aligning_questions">
+                <label for="autocomplete">Select an entry fee</label>
+                <input id ="autocomplete">
+                    <!-- <label class="question">Enter fee (in Euros):</label>
+                    <input type="number" id="max_fee" name="max_fee" placeholder="e.g. 25"> -->
+                </div>
+                <br>
+                <div class="button-container">
+                    <button type="submit">Search</button>
+                </div>
+            </form>            
+        </div>
+        <div>
+            <h3><a class="link" href="../HTML/search_page.html">Back to Search Page</a></h3>
+        </div>
+    </div>
+
+    
 
     <?php
 
